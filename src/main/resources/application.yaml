@@ -46,8 +46,9 @@ resilience4j:
         sliding-window-type: COUNT_BASED
 
 microservice:
-  product: http://product-service-svc/product/
-  payment: http://payment-service-svc/payment/
+  product: http://localhost:8080/product/
+  payment: http://localhost:8081/payment/
+
 
 #eureka:
 #  instance:

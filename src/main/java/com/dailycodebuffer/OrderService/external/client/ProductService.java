@@ -19,10 +19,10 @@ public interface ProductService {
     );
 
 
-    default ResponseEntity<Void> fallback(Exception e) {
-        throw new CustomException("Product Service is not available",
-                "UNAVAILABLE",
-                500);
-    }
+	default ResponseEntity<Void> fallback(Exception e) {
+	    throw new CustomException("Product Service is not available",
+	            "UNAVAILABLE",
+	            500);
+	}
 
 }

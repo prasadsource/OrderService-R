@@ -1,4 +1,4 @@
-package com.dailycodebuffer.OrderService.external.intercept;
+/*package com.dailycodebuffer.OrderService.external.intercept;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -24,3 +24,4 @@ public class OAuthRequestInterceptor implements RequestInterceptor {
                 .getAccessToken().getTokenValue());
     }
 }
+*/

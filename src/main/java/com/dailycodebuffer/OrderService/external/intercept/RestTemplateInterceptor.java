@@ -1,4 +1,4 @@
-package com.dailycodebuffer.OrderService.external.intercept;
+/*package com.dailycodebuffer.OrderService.external.intercept;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
@@ -33,3 +33,4 @@ public class RestTemplateInterceptor implements ClientHttpRequestInterceptor {
         return execution.execute(request, body);
     }
 }
+*/

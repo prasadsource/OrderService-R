@@ -139,7 +139,7 @@ public class OrderControllerTest {
 
                 OrderRequest orderRequest = getMockOrderRequest();
                 MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/order/placeOrder")
-                                .with(jwt().authorities(new SimpleGrantedAuthority("Customer")))
+                               // .with(jwt().authorities(new SimpleGrantedAuthority("Customer")))
                                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                                 .content(objectMapper.writeValueAsString(orderRequest)))
                                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -162,7 +162,7 @@ public class OrderControllerTest {
         public void test_WhenPlaceOrderWithWrongAccess_thenThrow403() throws Exception {
                 OrderRequest orderRequest = getMockOrderRequest();
                 MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/order/placeOrder")
-                                .with(jwt().authorities(new SimpleGrantedAuthority("Admin")))
+                                //.with(jwt().authorities(new SimpleGrantedAuthority("Admin")))
                                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                                 .content(objectMapper.writeValueAsString(orderRequest)))
                                 .andExpect(MockMvcResultMatchers.status().isForbidden())
@@ -171,7 +171,7 @@ public class OrderControllerTest {
 
         public void test_WhenGetOrder_Success() throws Exception {
                 MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/order/1")
-                                .with(jwt().authorities(new SimpleGrantedAuthority("Admin")))
+                                //.with(jwt().authorities(new SimpleGrantedAuthority("Admin")))
                                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                                 .andExpect(MockMvcResultMatchers.status().isOk())
                                 .andReturn();
@@ -186,7 +186,7 @@ public class OrderControllerTest {
         @Test
         public void testWhen_GetOrder_Order_Not_Found() throws Exception {
                 MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/order/2")
-                                .with(jwt().authorities(new SimpleGrantedAuthority("Admin")))
+                                //.with(jwt().authorities(new SimpleGrantedAuthority("Admin")))
                                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                                 .andExpect(MockMvcResultMatchers.status().isNotFound())
                                 .andReturn();

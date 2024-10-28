@@ -1,4 +1,4 @@
-package com.dailycodebuffer.OrderService.security;
+/*package com.dailycodebuffer.OrderService.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,3 +27,4 @@ public class WebSecurityConfig {
         return http.build();
     }
 }
+*/
