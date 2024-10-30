@@ -1,7 +1,5 @@
-package com.dailycodebuffer.OrderService.external.intercept;
+/*package com.dailycodebuffer.OrderService.external.intercept;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -10,10 +8,9 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
 
 import java.io.IOException;
-@Configuration
+
 public class RestTemplateInterceptor implements ClientHttpRequestInterceptor {
 
-	@Autowired
     private OAuth2AuthorizedClientManager oAuth2AuthorizedClientManager;
 
     public RestTemplateInterceptor(
@@ -36,3 +33,4 @@ public class RestTemplateInterceptor implements ClientHttpRequestInterceptor {
         return execution.execute(request, body);
     }
 }
+*/

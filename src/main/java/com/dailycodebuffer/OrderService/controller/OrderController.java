@@ -3,7 +3,6 @@ package com.dailycodebuffer.OrderService.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +24,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-   @PreAuthorize("hasAuthority('Customer')")
+   // @PreAuthorize("hasAuthority('Customer')")
     @PostMapping("/placeOrder")
     public ResponseEntity<Long> placeOrder(@RequestBody OrderRequest orderRequest) {
         long orderId = orderService.placeOrder(orderRequest);
@@ -33,21 +32,13 @@ public class OrderController {
         return new ResponseEntity<>(orderId, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('Admin') || hasAuthority('Customer')")
+   // @PreAuthorize("hasAuthority('Admin') || hasAuthority('Customer')")
     @GetMapping("/{orderId}")
     public ResponseEntity<OrderResponse> getOrderDetails(@PathVariable long orderId) {
         OrderResponse orderResponse
                 = orderService.getOrderDetails(orderId);
 
         return new ResponseEntity<>(orderResponse,
-                HttpStatus.OK);
-    }
-    
-    @GetMapping("/greetings/{name}")
-    public ResponseEntity<String> wishMessage(@PathVariable String name) {
-
-
-        return new ResponseEntity<>("Hello "+name,
                 HttpStatus.OK);
     }
 }
